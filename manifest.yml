@@ -4,7 +4,7 @@ applications:
   instances: 1
 - name: HelloWorld
   memory: 512M
-  host: changeme
+  host: brucetest06
   domain: mybluemix.net
   env: {
     }
