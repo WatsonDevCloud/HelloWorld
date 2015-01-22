@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Hello World!</title>
+	<title>Watson Hello World!</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 <body>
 
-	<textarea id="theText" rows="20" cols="100"></textarea>
+	<h3>Watson Relationship Extraction Hello World</h3>
+	
+	<textarea id="theText" rows="10" cols="80">Barack Obama is the president of the United States.</textarea>
 
 	<br>
-	<button type="button" onClick="propsButtonClick()">Display VCAP Properties</button>
+	
+	<button type="button" onClick="buttonClickGet('api/vcapprops')">Display Connection Properties</button>
+	<button type="button" onClick="buttonClickPost('api/rx')">Display Raw Extraction</button>
+	<button type="button" onClick="buttonClickPost('api/processed')">Display Processed Extraction</button>
+	
 	<br>
-	<div id="propsDiv"></div>
-
-
-	<br>
-	<button type="button" onClick="rxButtonClick()">Display Relationship Extraction</button>
-	<br>
-	<div id="rxDiv"></div>
+	
+	<pre id="resultsPre"></pre>
 
 
 	<script type="text/javascript" src="index.js"></script>
 	
 	<script type="text/javascript">
-		function propsButtonClick() {
-
-			var propsDiv = document.getElementById('propsDiv');
-			
-			//var servicePath ='api/tc?dataset=' + dataset + '&tweet=' + encodeURIComponent(originalTweet);	
-			var servicePath ='api/vcapprops';			
+		function buttonClickGet(servicePath) {
 			console.log(servicePath);
 			
+			var results = document.getElementById('resultsPre');
+					
 			xhrGet(servicePath, function(responseText) {
-			
-				propsDiv.innerHTML = responseText;
-							
-			}, function(err) {
-			
+				results.innerHTML = responseText;
+			}, function(err) {	
 				console.log(err);
-				
 			});
 		}
 		
 		
-		function rxButtonClick() {
-
-			var propsDiv = document.getElementById('rxDiv');
-			
-			//var servicePath ='api/tc?dataset=' + dataset + '&tweet=' + encodeURIComponent(originalTweet);	
-			var servicePath ='api/rx';			
+		function buttonClickPost(servicePath) {
 			console.log(servicePath);
 			
-			xhrGet(servicePath, function(responseText) {
-			
-				propsDiv.innerHTML = responseText;
-							
-			}, function(err) {
-			
+			var theText = document.getElementById("theText");
+			var results = document.getElementById('resultsPre');
+
+			xhrPost(servicePath, theText.value, function(responseText){
+				results.innerHTML = encodeHTML(responseText);		
+			}, function(err){
 				console.log(err);
-				
-			});
+			});		
+		}
+		
+		
+		
+		function encodeHTML(string) {
+		    return string.replace(/&/g, '&amp;')
+               .replace(/</g, '&lt;')
+               .replace(/>/g, '&gt;')
+               .replace(/"/g, '&quot;')
+               .replace(/'/g, '&apos;');
 		}
 		
 	</script>	
-	
 	
 </body>
 </html>

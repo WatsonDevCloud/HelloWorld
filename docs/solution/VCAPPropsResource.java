@@ -10,7 +10,7 @@ public class VCAPPropsResource {
 	@GET
 	public String getVcapProperties() {
 		
-		return "VCAPPropsResource.getVcapProperties() method still needs implementing";
+		return System.getenv("VCAP_SERVICES");
 		
 	}
 	
