@@ -1,0 +1,12 @@
+---
+applications:
+- disk_quota: 1024M
+  instances: 1
+- name: HelloWorld
+  memory: 512M
+  host: changeme
+  domain: mybluemix.net
+  env: {
+    }
+  services: {
+    }
