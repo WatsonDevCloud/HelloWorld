@@ -2,24 +2,23 @@ package com.ibm.ic2015;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
 
 
 @Path("/vcapprops")
 public class VCAPPropsResource {
 
 	@GET
+	@Produces("text/plain")
 	public String getVcapProperties() {
 		
-		return System.getenv("VCAP_SERVICES");
+		VCAPProperties vcp = new VCAPProperties();
 		
-	}
-	
-	
-	
-
-	public String EMPTYgetVcapProperties() {
+		String props = "URL: " + vcp.getBaseURL() +
+						"\nUsername: " + vcp.getUsername() +
+						"\nPassword: " + vcp.getPassword();
 		
-		return "RXResource.getVcapProperties() method still needs implementing";
+		return props;
 		
 	}
 

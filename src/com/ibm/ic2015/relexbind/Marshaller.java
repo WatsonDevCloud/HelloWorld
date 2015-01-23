@@ -1,4 +1,4 @@
-package relexbind;
+package com.ibm.ic2015.relexbind;
 
 import java.io.StringReader;
 

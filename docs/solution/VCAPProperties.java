@@ -14,12 +14,6 @@ public class VCAPProperties {
 	private String password = "<service password>";
 	
 	
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-	
-	
 	public VCAPProperties() {
 		processVCAP_Services();
 	}
@@ -72,33 +66,14 @@ public class VCAPProperties {
     }
 	
 	
-    
-    
-    
-    /**
-     * If exists, process the VCAP_SERVICES environment variable in order to get the 
-     * username, password and baseURL
-     */
-    private void EMPTYprocessVCAP_Services() {
-
-
-    }
-
-    
-    
-    /**
-     * Gets the <b>VCAP_SERVICES</b> environment variable and return it
-     *  as a JSONObject.
-     *
-     * @return the VCAP_SERVICES as Json
-     */
-    private JSONObject EMPTYgetVcapServices() {
-
-        return null;
-    }
-    
-    
-    
-    
+	public String getBaseURL() {
+		return baseURL;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public String getPassword() {
+		return password;
+	} 
     
 }
