@@ -1,12 +1,9 @@
-package com.ibm.ic2015.resource;
+package com.ibm.ic2015;
 
 import javax.ws.rs.FormParam;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
-
-import com.ibm.ic2015.RelExAPI;
-import com.ibm.ic2015.VCAPProperties;
 
 
 @Path("/rx")

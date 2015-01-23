@@ -1,4 +1,4 @@
-package com.ibm.ic2015.xmlbind;
+package relexbind;
 
 import java.util.ArrayList;
 import java.util.List;

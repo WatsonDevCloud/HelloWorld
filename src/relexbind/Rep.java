@@ -1,4 +1,4 @@
-package com.ibm.ic2015.xmlbind;
+package relexbind;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;

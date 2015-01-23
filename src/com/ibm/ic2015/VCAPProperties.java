@@ -14,25 +14,8 @@ public class VCAPProperties {
 	private String password = "<service password>";
 	
 	
-	public String getBaseURL() {
-		return baseURL;
-	}
 
 
-	public String getUsername() {
-		return username;
-	}
-
-
-	public String getPassword() {
-		return password;
-	}
-
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 	
 	
 	public VCAPProperties() {
@@ -87,7 +70,21 @@ public class VCAPProperties {
     }
 	
 	
-    
+	public String getBaseURL() {
+		return baseURL;
+	}
+
+
+	public String getUsername() {
+		return username;
+	}
+
+
+	public String getPassword() {
+		return password;
+	}
+	
+	
     
     
     /**

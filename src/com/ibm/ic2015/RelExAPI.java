@@ -14,27 +14,12 @@ import org.apache.http.client.utils.URLEncodedUtils;
 import org.apache.http.entity.ContentType;
 import org.apache.http.message.BasicNameValuePair;
 
+import relexbind.Marshaller;
+import relexbind.Rep;
+
 public class RelExAPI {
 
-	/*
-	 * Tester for API so we don't have to deploy to Bluemix to test.
-	 */
-	public static void main(String[] args) {
-		String text = "Barack Obama is the president of the United States.";
-		
-		String url = "https://gateway.watsonplatform.net/laser/service/api/v1/sire/cf997efc-3c5d-440d-9c54-885b04d56c4e";
-		String username = "ebe462b4-16d8-4ed7-9653-ad70999bb34c";
-		String password = "htbNjBXFzHpG";
-		
-		
-		String xml = RelExAPI.performExtraction(text, 
-							"ie-en-news", 
-							url, 
-							username, 
-							password);
-		
-		System.out.print(xml);
-	}
+
 	
 	
 	

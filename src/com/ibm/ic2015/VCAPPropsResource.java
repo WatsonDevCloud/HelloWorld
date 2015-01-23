@@ -1,9 +1,7 @@
-package com.ibm.ic2015.resource;
+package com.ibm.ic2015;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
-
-import com.ibm.ic2015.VCAPProperties;
 
 
 @Path("/vcapprops")
