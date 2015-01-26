@@ -12,9 +12,10 @@ public class VCAPPropsResource {
 	@Produces("text/plain")
 	public String getVcapProperties() {
 		
-		VCAPProperties vcp = new VCAPProperties();
+		VCAPProperties vcp = new VCAPProperties("relationship_extraction"); 
 		
-		String props = "URL: " + vcp.getBaseURL() +
+		String props = 	"Resource: " + vcp.getServiceName() +
+						"\nURL: " + vcp.getBaseURL() +
 						"\nUsername: " + vcp.getUsername() +
 						"\nPassword: " + vcp.getPassword();
 		

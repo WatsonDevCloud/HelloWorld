@@ -1,12 +1,10 @@
----
 applications:
-- disk_quota: 1024M
-  instances: 1
-- name: HelloWorld
-  memory: 512M
-  host: brucetest06
+- services:
+  - Relationship Extraction-os
+  disk_quota: 1024M
+  name: HelloWorld
+  host: helloworldapp
   domain: mybluemix.net
-  env: {
-    }
-  services: {
-    }
+  path: webStarterApp.war  
+  instances: 1
+  memory: 512M
