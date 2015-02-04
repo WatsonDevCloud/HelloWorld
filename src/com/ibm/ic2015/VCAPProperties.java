@@ -7,14 +7,14 @@ import com.ibm.json.java.JSONObject;
 
 public class VCAPProperties {
 
-	private String serviceName = "relationship_extraction";
-	
+	private String serviceName = "<service name>";
 	private String baseURL = "<service url>";
 	private String username = "<service username>";
 	private String password = "<service password>";
 	
 	
-	public VCAPProperties() {
+	public VCAPProperties(String serviceName) {
+		this.serviceName = serviceName;
 		processVCAP_Services();
 	}
 	
@@ -51,8 +51,8 @@ public class VCAPProperties {
 	public String getPassword() {
 		return password;
 	}
-	
-	
-    
+	public String getServiceName() {
+		return serviceName;
+	} 
   
 }

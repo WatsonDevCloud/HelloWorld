@@ -25,19 +25,23 @@ public class VCAPProperties {
      */
     private void processVCAP_Services() {
     	System.out.println("Processing VCAP_SERVICES");
+    	
         JSONObject sysEnv = getVcapServices();
         if (sysEnv == null) {
         	return;
         }
+        
         System.out.println("Looking for: " + serviceName );
         
         if (sysEnv.containsKey(serviceName)) {
 			JSONArray services = (JSONArray)sysEnv.get(serviceName);
 			JSONObject service = (JSONObject)services.get(0);
 			JSONObject credentials = (JSONObject)service.get("credentials");
+			
 			baseURL = (String)credentials.get("url");
 			username = (String)credentials.get("username");
 			password = (String)credentials.get("password");
+			
 			System.out.println("baseURL  = " + baseURL);
 			System.out.println("username   = " + username);
 			System.out.println("password = " + password);
@@ -56,7 +60,11 @@ public class VCAPProperties {
      */
     private JSONObject getVcapServices() {
         String envServices = System.getenv("VCAP_SERVICES");
-        if (envServices == null) return null;
+        
+        if (envServices == null) {
+        	return null;
+        }
+        
         JSONObject sysEnv = null;
         try {
         	 sysEnv = JSONObject.parse(envServices);
@@ -64,6 +72,7 @@ public class VCAPProperties {
         	// Do nothing, fall through to defaults
         	System.out.println("Error parsing VCAP_SERVICES: " + e.getMessage());
         }
+        
         return sysEnv;
     }
 	
@@ -80,6 +89,5 @@ public class VCAPProperties {
 	public String getServiceName() {
 		return serviceName;
 	} 
-	
     
 }
