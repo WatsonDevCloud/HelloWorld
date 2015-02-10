@@ -1,2 +1,5 @@
-# HelloWorld
-Hello World example for InterConnect2015
+# Watson HelloWorld Lab
+
+###InterConnect 2015 Watson developer cloud course. 
+
+See the docs directory for more info.
