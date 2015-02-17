@@ -15,7 +15,7 @@ public class RXResource {
 		
 		System.out.println("Form text: " + text);
 		
-		VCAPProperties vcp = new VCAPProperties();
+		VCAPProperties vcp = new VCAPProperties("relationship_extraction");
 		
 		String xml = RelExAPI.performExtraction(text, 
 									"ie-en-news", 
